@@ -118,3 +118,7 @@ resource "aws_api_gateway_deployment" "deployment" {
   rest_api_id = aws_api_gateway_rest_api.api_gw.id
   stage_name = "dev"
 }
+
+output "api_gateway_endpoint" {
+  value = "https://${aws_api_gateway_rest_api.api_gw.id}.execute-api.ap-southeast-1.amazonaws.com/${aws_api_gateway_deployment.deployment.stage_name}/${aws_api_gateway_resource.resource.path_part}"
+}
