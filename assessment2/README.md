@@ -44,5 +44,5 @@
         }
     }
     ```
-6. Take the "IdToken" and add it into the "Headers" portion in Postman. The example is shown below.
+6. Insert the "IdToken" into the "Headers" portion in Postman as shown in the example below and the success response would be shown.
 ![alt text](./assets/success.png)
