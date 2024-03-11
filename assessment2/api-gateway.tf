@@ -17,7 +17,10 @@ resource "aws_api_gateway_method" "method" {
   rest_api_id = aws_api_gateway_rest_api.api_gw.id
   resource_id = aws_api_gateway_resource.resource.id
   http_method = "GET"
-  authorization = "NONE"
+  # authorization = "NONE"
+
+  authorization = "COGNITO_USER_POOLS"
+  authorizer_id = aws_api_gateway_authorizer.authorizer.id
 }
 
 resource "aws_api_gateway_integration" "lambda_integration" {
